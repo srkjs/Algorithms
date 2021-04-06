@@ -40,16 +40,16 @@ def in_order_traverse(tree, array):
 def pre_order_traverse(tree, array):
     if tree is not None:
         array.append(tree.value)
-        in_order_traverse(tree.left, array)
-        in_order_traverse(tree.right, array)
+        pre_order_traverse(tree.left, array)
+        pre_order_traverse(tree.right, array)
     return array
 
 
 # O(n) time | O(n) space
 def post_order_traverse(tree, array):
     if tree is not None:
-        in_order_traverse(tree.left, array)
-        in_order_traverse(tree.right, array)
+        post_order_traverse(tree.left, array)
+        post_order_traverse(tree.right, array)
         array.append(tree.value)
     return array
 
